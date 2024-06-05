@@ -47,4 +47,8 @@ class MainActivity : AppCompatActivity() {
         rightAnswer = quiz[1]
 
     }
+
+    fun checkQuizCount(){
+
+    }
 }
