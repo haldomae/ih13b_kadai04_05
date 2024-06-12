@@ -51,4 +51,26 @@ class MainActivity : AppCompatActivity() {
     fun checkQuizCount(){
 
     }
+
+    //正解不正解を判定
+    private fun checkAnswer(){
+        // 入力された値を取得する
+        val answerText = binding.inputAnswer.text.toString()
+        val alertTitle: String = "正解 or 不正解"
+
+        // 正解か不正解を判定してタイトルを変えるのは各自で
+
+
+        val answerDialogFragment = AnswerDialogFragment()
+
+        val bundle = Bundle().apply {
+            putString("TITLE", alertTitle)
+            putString("MESSAGE", "クイズの答え")
+        }
+        answerDialogFragment.arguments = bundle
+
+        answerDialogFragment.isCancelable = false
+
+        answerDialogFragment.show(supportFragmentManager, "my_dialog")
+    }
 }
