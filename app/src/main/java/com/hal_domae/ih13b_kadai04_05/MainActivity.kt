@@ -1,5 +1,6 @@
 package com.hal_domae.ih13b_kadai04_05
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.KeyEvent
 import android.widget.TextView
@@ -65,7 +66,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun checkQuizCount(){
-
+        if(quizCount == 3) {
+            // 画面遷移する
+            // アクティビティを切り替えるにはintentを使う
+            val intent = Intent(this@MainActivity, ResultActivity::class.java)
+            // 正解数は各自でカウントしてやる
+            intent.putExtra("RIGHT_ANSWER_COUNT", 1)
+            // 結果画面を呼び出す
+            startActivity(intent)
+        } else {
+            // テキストの入力欄をクリア
+            binding.inputAnswer.text.clear()
+            // クイズのカウントをプラス
+            quizCount++
+            // 次の問題を表示
+            showNextQuiz()
+        }
     }
 
     //正解不正解を判定
