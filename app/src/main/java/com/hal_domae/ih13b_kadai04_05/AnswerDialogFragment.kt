@@ -14,6 +14,7 @@ class AnswerDialogFragment : DialogFragment() {
             MaterialAlertDialogBuilder(it)
                 .setTitle(arguments?.getString("TITLE"))
                 .setMessage(arguments?.getString("MESSAGE"))
+
                 /*
                 * Positive : 肯定的なアクション(OK、同意するなど)
                 * Negative : 否定的なアクション(キャンセル、同意しないなど)

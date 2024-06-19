@@ -60,6 +60,8 @@ class MainActivity : AppCompatActivity() {
         // この問題の答え
         rightAnswer = quiz[1]
 
+        // クイズデータ消す
+        quizData.removeAt(0)
     }
 
     fun checkQuizCount(){
