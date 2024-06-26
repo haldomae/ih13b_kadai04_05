@@ -10,6 +10,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.hal_domae.ih13b_kadai04_05.databinding.ActivityMainBinding
 
+//const val QUIZ_COUNT = 3
+
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
@@ -66,7 +68,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun checkQuizCount(){
-        if(quizCount == 3) {
+        if(quizCount == resources.getInteger(R.integer.quiz_count)) {
             // 画面遷移する
             // アクティビティを切り替えるにはintentを使う
             val intent = Intent(this@MainActivity, ResultActivity::class.java)
